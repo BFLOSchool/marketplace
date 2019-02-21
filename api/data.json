@@ -1,0 +1,420 @@
+{
+  "items": [
+    {
+      "ingredients": [
+        "Sugar",
+        "Almonds",
+        "Egg Whites",
+        "Vanilla Extract"
+      ],
+      "_id": "5c2a5f49a397640e17f0eb08",
+      "name": "Macaroons",
+      "description": "Colorful and sweet, these desserts are sure to be a hit with the whole family.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/macaroons.jpg",
+      "price": 5,
+      "createdAt": "2018-12-31T18:26:17.678Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Beef",
+        "Bread",
+        "Lettuce",
+        "Cheese"
+      ],
+      "_id": "5c2a5f500793e00e30a9c29b",
+      "name": "Hamburger",
+      "description": "Our hamburger consists of a cooked patty of ground beef, placed inside a sliced bread roll.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/hamburger.jpg",
+      "price": 10,
+      "createdAt": "2018-12-31T18:26:24.837Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Baguette",
+        "cha lua Pork",
+        "Pickled Veggie Slaw"
+      ],
+      "_id": "5c2a5f5bbedee10e52ad6e3c",
+      "name": "Banh Mi",
+      "description": "A typical Vietnamese sandwich that is a fusion of meats and vegetables from native Vietnamese cuisine.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/bahn-mi.png",
+      "price": 5,
+      "createdAt": "2018-12-31T18:26:35.107Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Breaded Chicken Breast",
+        "Pickled Cabbage",
+        "Garlic Aioli",
+        "Kaiser Roll"
+      ],
+      "_id": "5c2a5f5c7f4ece0e56d6e53a",
+      "name": "Fried Chicken Sandwich",
+      "description": "Deep fried, crispy chicken breast topped with house garlic aioli and cabbage slaw.  Served on a kaiser roll.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/chicken-sandwich.png",
+      "price": 12,
+      "createdAt": "2018-12-31T18:26:36.949Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Iceberg Lettuce",
+        "Romaine Lettuce",
+        "Tomatoes",
+        "Bacon",
+        "Avocados",
+        "Blue Cheese"
+      ],
+      "_id": "5c2a5f5f5177820e5a633941",
+      "name": "Cobb Salad",
+      "description": "Farm fresh iceberg and romaine lettuce, cherry tomatoes, bacon, and avocados.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/cobb-salad.jpg",
+      "price": 7,
+      "createdAt": "2018-12-31T18:26:39.195Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Beef",
+        "Soy Sauce",
+        "Olive Oil",
+        "Brown Sugar"
+      ],
+      "_id": "5c2a5f61a0b64d0e5e8d6ffd",
+      "name": "Flank Steak",
+      "description": "Our famous flank steak with our signature marinade. Grilled as you please.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/flank-steak.jpg",
+      "price": 15,
+      "createdAt": "2018-12-31T18:26:41.258Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Russet Potatoes",
+        "Vegetable Oil",
+        "Kosher Salt"
+      ],
+      "_id": "5c2a5f635fbcd50e62792348",
+      "name": "French Fries",
+      "description": "Cut-up potatoes fried in vegetable oil, and then covered with salt. Served with a side of ketchup.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/french-fries.jpg",
+      "price": 4,
+      "createdAt": "2018-12-31T18:26:43.005Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Eggs",
+        "Bread",
+        "Mayonnaise",
+        "Celery"
+      ],
+      "_id": "5c2a5f659cd7ae0e7805c44c",
+      "name": "Egg Sandwich",
+      "description": "A sandwich with a filling of sliced boiled eggs and topped with both mayonnaise and celery.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/egg-sandwhich.jpg",
+      "price": 9,
+      "createdAt": "2018-12-31T18:26:45.867Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Vegetable Broth",
+        "Olive Oil",
+        "Onion",
+        "Celery",
+        "Corn",
+        "Green Beans"
+      ],
+      "_id": "5c2a5f68fc1a9d0e9476706c",
+      "name": "Vegetable Soup",
+      "description": "Our soup is made from a vegetable broth combined with a variety of other delicious vegetables.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/vegetable-soup.jpg",
+      "price": 8,
+      "createdAt": "2018-12-31T18:26:48.175Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Cheese",
+        "Bread",
+        "Butter"
+      ],
+      "_id": "5c2a5f53717ec50e438b7ea3",
+      "name": "Grilled Cheese",
+      "description": "Our grilled cheese sandwich is made by grilling the sandwich with butter.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/grilled-cheese.jpg",
+      "price": 5,
+      "createdAt": "2018-12-31T18:26:27.835Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Strawberries",
+        "Blueberries",
+        "Ice Cubes"
+      ],
+      "_id": "5c2d04890625380d99eb92ba",
+      "name": "Smoothie",
+      "description": "Our smoothie is a thick, creamy and cold beverage made from pureed raw fruit.",
+      "price": 5,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/smoothie.jpg",
+      "createdAt": "2019-01-02T18:35:53.070Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Ramen Noodles",
+        "Egg",
+        "Vegetable Broth",
+        "Miso Paste",
+        "Spinach"
+      ],
+      "_id": "5c2d048b82e7ad0d9d616f3a",
+      "name": "Miso Ramen",
+      "description": "Ramen noodles and a hard boiled egg: what more can you ask for?",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/miso-ramen.png",
+      "price": 7,
+      "createdAt": "2019-01-02T18:35:55.565Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Bread",
+        "Salami",
+        "Cheese",
+        "Ham",
+        "Olive Salad"
+      ],
+      "_id": "5c2d0490661a4b0dcd4599e4",
+      "name": "Muffaletta",
+      "description": "A popular sandwich originating in New Orleans, this will be sure to satisfy.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/muffalatta.jpg",
+      "price": 7,
+      "createdAt": "2019-01-02T18:36:00.805Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Tortilla Chips",
+        "Jalapeno Peppers",
+        "Cheese",
+        "Olives"
+      ],
+      "_id": "5c2d04b38a7fb80dd68c8c3f",
+      "name": "Nachos",
+      "description": "One of our most popular appetizers and made to share.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/nachos.jpg",
+      "price": 4,
+      "createdAt": "2019-01-02T18:36:35.629Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Cheese",
+        "Ham",
+        "Baguette",
+        "Butter"
+      ],
+      "_id": "5c2a5f545737a30e483bde9d",
+      "name": "Ham Baguette",
+      "description": "Simple ingredients, but a complex taste.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/ham-baguette.jpg",
+      "price": 7,
+      "createdAt": "2018-12-31T18:26:28.498Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Water",
+        "Flour",
+        "Eggs",
+        "Tomatoes",
+        "Herbs",
+        "Pesto"
+      ],
+      "_id": "5c2a5f584566b60e4d6a4d67",
+      "name": "Pesto Pasta",
+      "description": "A staple food of Italian cuisine, and our's will take you back to days spent in your Nonna's kitchen.",
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/pesto-pasta.jpg",
+      "price": 7,
+      "createdAt": "2018-12-31T18:26:32.562Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Bread",
+        "Tomato Sauce",
+        "Cheese",
+        "Pepperoni",
+        "Olives",
+        "Basil"
+      ],
+      "_id": "5c2d04b60f7e5a0ddad231d5",
+      "name": "Olive Pizza",
+      "description": "All of our pizzas are made from scratch in house. Take one bite and you'll taste the difference.",
+      "price": 8,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/olive-pizza.jpg",
+      "createdAt": "2019-01-02T18:36:38.662Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Ice Cream",
+        "Milk",
+        "Oreos",
+        "Chocolate Syrup"
+      ],
+      "_id": "5c2d0530688a9f0e5bfc6bac",
+      "name": "Oreo Milkshake",
+      "description": "A thick, creamy milkshake made with the classic Oreo cookie.",
+      "price": 5,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/oreo-milkshake.jpg",
+      "createdAt": "2019-01-02T18:38:40.663Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Pork Cut",
+        "Cubed Potatoes",
+        "Broccoli"
+      ],
+      "_id": "5c2d052f1055a50e57427ecb",
+      "name": "Pork Chop",
+      "description": "A cut of pork loin that is covered with a blend of spices and served alongside broccoli and potatoes.",
+      "price": 5,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/pork-chop.jpg",
+      "createdAt": "2019-01-02T18:38:39.561Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Rice",
+        "Broth",
+        "Tomato"
+      ],
+      "_id": "5c2d052ee74e310e53d5eb6a",
+      "name": "Risotto",
+      "description": "Try our risotto and you might be tempted to order a second dish of it for the road.",
+      "price": 7,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/risotto.jpg",
+      "createdAt": "2019-01-02T18:38:38.194Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Beef",
+        "Bread",
+        "Cheese",
+        "Bacon"
+      ],
+      "_id": "5c2d052c33ab470e4fe955c7",
+      "name": "Sliders",
+      "description": "Order as an appetizer with friends or just for yourself- we won't tell.",
+      "price": 6,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/sliders.jpg",
+      "createdAt": "2019-01-02T18:38:36.824Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Sugar",
+        "High Fructose Corn Syrup",
+        "Carbonated Water"
+      ],
+      "_id": "5c2d05271ca5cf0e4a900c21",
+      "name": "Sodapop",
+      "description": "Soda, pop, soft drink; doesn't matter what you call it, it'll hit the spot.",
+      "price": 5,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/soda-pop.jpg",
+      "createdAt": "2019-01-02T18:38:31.429Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Ramen Noodles",
+        "Broth",
+        "Carrots",
+        "Chicken",
+        "Egg",
+        "Sriracha Sauce"
+      ],
+      "_id": "5c2d04bd433b4e0e0113b81d",
+      "name": "Spicy Ramen",
+      "description": "Do you like Ramen but the Miso just isn't hot enough for you? We've got you covered.",
+      "price": 8,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/spicy-ramen.png",
+      "createdAt": "2019-01-02T18:36:45.124Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Dumpling Wrappers",
+        "Pork",
+        "Cabbage"
+      ],
+      "_id": "5c2d04c6e171820e07f482a0",
+      "name": "Steamed Dumplings",
+      "description": "These dumplings will make you think you're in Chinatown. Served with a side of soy sauce.",
+      "price": 5,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/steamed-dumplings.jpg",
+      "createdAt": "2019-01-02T18:36:54.967Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Bread",
+        "Cheese",
+        "Tomato Sauce",
+        "Pepperoni",
+        "Peppers",
+        "Onions",
+        "Mushrooms",
+        "Sausage",
+        "Oregano"
+      ],
+      "_id": "5c2d04fe1671d20e206611ae",
+      "name": "Supreme Pizza",
+      "description": "Why settle for one topping when you can get them all?",
+      "price": 11,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/supreme-pizza.jpg",
+      "createdAt": "2019-01-02T18:37:50.651Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Bread",
+        "Beef",
+        "Cheese",
+        "Bacon",
+        "Pickle Slices"
+      ],
+      "_id": "5c2d0503bd77200e39cc4d53",
+      "name": "Double Cheeseburger",
+      "description": "Every day is the Fourth of July with our signature double cheeseburger.",
+      "price": 11,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/double-cheeseburger.jpg",
+      "createdAt": "2019-01-02T18:37:55.208Z",
+      "__v": 0
+    },
+    {
+      "ingredients": [
+        "Bread",
+        "Chicken",
+        "Lettuce",
+        "Cheese",
+        "Tomato"
+      ],
+      "_id": "5c2fc23f8a1ee62c625e7af1",
+      "name": "Club Sandwich",
+      "description": "Our club sandwich is a savory and refreshing option for an entree.",
+      "price": 7,
+      "image": "https://cdn.bfloschool.com/projects/marketplace/images/clubsandwich.jpg",
+      "createdAt": "2019-01-04T20:29:51.617Z",
+      "__v": 0
+    }
+  ]
+}
