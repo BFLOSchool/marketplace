@@ -40,6 +40,7 @@ app.post('/signup', function (req, res) {
     password: req.body.password
   });
   newUser.save(function(err, user) {
+    console.log(user)
     if (!err) {
       var token = jwt.sign(JSON.parse(JSON.stringify(user)), config.secret);
       res.status(200).send({message: "success", token: 'JWT ' + token, user: user})
@@ -72,27 +73,18 @@ app.get('/api/marketplace', function (req, res) {
   res.json(file)
 })
 
-app.get('/api/hello', passport.authenticate('jwt', { session: false}), function(req, res) {
-  const token = getToken(req.headers);
-  if (token) {
-    res.status(200).send({message: "Hello World!"})
-  } else {
-    return res.status(403).send({success: false, message: 'Unauthorized.'});
-  }
+app.get('/api/profile/:userId', passport.authenticate('jwt', { session: false}), function(req, res) {
+  User.findOne({
+    email: req.params.userId
+  }, function(err, user) {
+    if (!user) {
+      res.status(401).send({error: true, message: 'authentication failed'});
+    } else {
+      res.status(200).send({token: 'JWT ' + token, message: "success"})
+    }
+  });
 });
 
-function getToken(headers) {
-  if (headers && headers.authorization) {
-    var parted = headers.authorization.split(' ');
-    if (parted.length === 2) {
-      return parted[1];
-    } else {
-      return null;
-    }
-  } else {
-    return null;
-  }
-}
 
 
 
