@@ -61,6 +61,7 @@ class Signup extends Component {
       axios.post('http://localhost:5000/signup', data).then(response =>{
         alert("You have signed up successfully")
         localStorage.setItem("token", response.data.token)
+        localStorage.setItem("user", response.data.user)
       }).catch(error =>{
         alert('Whoops, something went wrong. Please try again!')
       });

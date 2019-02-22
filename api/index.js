@@ -60,7 +60,7 @@ app.post('/login', function(req, res) {
       user.checkPassword(req.body.password, function (err, matchFound) {
         if (matchFound && !err) {
           var token = jwt.sign(JSON.parse(JSON.stringify(user)), config.secret);
-          res.status(200).send({token: 'JWT ' + token, message: "success"})
+          res.status(200).send({token: 'JWT ' + token, message: "success", user: user})
         } else {
           res.status(401).send({error: true, message: 'authentication failed'});
         }

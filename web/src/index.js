@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Home from './Home';
 import Item from './Item';
 import Checkout from './Checkout';
+import Profile from './Profile';
 
 import Login from './Login';
 import Signup from './Signup';
@@ -24,6 +25,7 @@ ReactDOM.render(
       <Route exact path="/checkout" component={Checkout}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/>
+      <Route exact path="/profile" component={Profile}/>
     </div>
   </Router>,
  document.getElementById('root')
