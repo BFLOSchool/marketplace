@@ -104,10 +104,10 @@ class Checkout extends Component {
           cvv: this.state.cardCVV,
           zip: this.state.cardZipCode
         },
-        email: this.state.emailAddress
+        email: this.state.email
       }
-      axios.post('https://dev-curriculum.bfloschool.com/api/marketplace/checkout', data).then(response =>{
-
+    axios.post('https://dev-curriculum.bfloschool.com/api/marketplace/checkout', data).then(response =>{
+        alert("Thank you for your purchase")
     }).catch(error =>{
       alert('Whoops, something went wrong. Please try again!')
     });
@@ -122,11 +122,6 @@ class Checkout extends Component {
       <div style={{backgroundColor: '#FAFAFA', height: 1000}}>
         <Nav />
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-12">
-              <img src={this.state.item.image} className="image-cover" alt="cover image" />
-            </div>
-          </div>
         </div>
         <br /><br />
         <div className="container">
@@ -181,10 +176,10 @@ class Checkout extends Component {
                   </div>
                   <br /><br />
                   <div className="col-6">
-                    <button type="button" className="back" onClick={this.goBack}><b>Back</b></button>
+                    <button type="button" className="back pointer" onClick={this.goBack}><b>Back</b></button>
                   </div>
                   <div className="col-6">
-                    <input type="submit" className="add" onClick={this.checkout} />
+                    <input type="submit" className="add pointer" onClick={this.checkout} />
                   </div>
                 </div>
               </form>

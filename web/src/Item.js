@@ -58,7 +58,7 @@ class Item extends Component {
   render() {
     var checkoutBtn;
     if (this.state.cart.length > 0) {
-      checkoutBtn = <button className="add"><b>Checkout</b></button>;
+      checkoutBtn = <button className="add pointer"><b>Checkout</b></button>;
     }
     if (this.state.item) {
       return (
