@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import Nav from './Components/Nav';
+import axios from 'axios'
 
 class Checkout extends Component {
   constructor(props) {
