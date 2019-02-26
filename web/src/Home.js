@@ -37,7 +37,7 @@ class Home extends Component {
              <hr />
               <div className="row">
                 {this.state.items.map((item, i) =>
-                  <div className="col-4 pointer" key={i}>
+                  <div className="col-4 pointer" key={i} style={{padding: 20}}>
                     <a href={'/item/'+item._id}>
                       <img src={item.image} className="cover" alt="image" /><br />
                       <span><b>{item.name}</b> ${item.price}</span><br />
