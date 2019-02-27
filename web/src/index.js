@@ -8,6 +8,7 @@ import Home from './Home';
 import Item from './Item';
 import Checkout from './Checkout';
 import Profile from './Profile';
+import Reset from './Reset';
 
 import Login from './Login';
 import Signup from './Signup';
@@ -26,6 +27,7 @@ ReactDOM.render(
       <Route exact path="/login" component={Login}/>
       <Route exact path="/signup" component={Signup}/>
       <Route exact path="/profile" component={Profile}/>
+      <Route exact path="/reset/:token" component={Reset}/>
     </div>
   </Router>,
  document.getElementById('root')

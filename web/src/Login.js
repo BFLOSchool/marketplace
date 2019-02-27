@@ -15,15 +15,6 @@ class Login extends Component {
       email: '',
       password: ''
     }
-
-    const token = localStorage.getItem('token');
-    axios.get('http://localhost:5000/api/hello', { headers: { 'Authorization': token, 'Content-Type': 'application/x-www-form-urlencoded' } }).then(response => {
-      console.log(response.data)
-    }).catch((error) => {
-      console.log(error)
-    });
-
-
   }
   handleEmailChange(event) {
     this.setState({

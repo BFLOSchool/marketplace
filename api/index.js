@@ -6,12 +6,30 @@ const mongoose = require('mongoose');
 const config = require('./config/config');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const moment = require('moment');
 const passport = require('passport');
+var bcrypt = require('bcrypt-nodejs');
+
 require('./config/passport')(passport);
 
 mongoose.connect(config.database);
-
 const User = require("./models/user");
+
+var domain = 'mg.bfloschool.com';
+var auth = {
+  auth: {
+    api_key: config.api_key,
+    domain: domain
+  }
+}
+
+var nodemailer = require('nodemailer');
+var mg = require('nodemailer-mailgun-transport');
+var handlebars = require('handlebars');
+
+var nodemailerMailgun = nodemailer.createTransport(mg(auth));
+var mailgun = require('mailgun-js')({ apiKey: config.api_key, domain: domain });
+var mailcomposer = require('mailcomposer');
 
 var file = JSON.parse(fs.readFileSync('data.json'));
 app.use(cors());
@@ -69,6 +87,77 @@ app.post('/login', function(req, res) {
   });
 });
 
+/**
+ * POST API /api/user/reset
+ * Request a reset for your password
+ * @param {string} username - username
+ * @return {JSON}
+ */
+app.post('/reset', function(req, res) {
+  User.findOne({
+    email: req.body.email
+  }, function(err, user) {
+    if (err) {
+       res.status(400).send({success: false, message: "user not found"});
+    }
+    const expiration  = moment().add(1, 'hours');
+    var token = jwt.sign({ user: user, expiresIn: expiration }, config.secret);
+
+    var resetLink = 'http://localhost:3000/reset/'+token; // update this with your website's port if needed
+    nodemailerMailgun.sendMail({
+     from: 'Marketplace Support <support@example.com>',
+     to: user.email,
+     subject: 'Reset your Password',
+     html: 'Thanks for requesting a reset. Click <a href="'+resetLink+'">here</a> to reset your password'
+    }, function (err, info) {
+      if (err) {
+        res.status(400).send({success: false, message: "error"});
+      } else {
+        res.status(200).send({success: true, message: "email sent"});
+      }
+    });
+  });
+});
+
+/**
+* POST API /api/user/reset/new
+* Create your new password
+* @param {string} token - token
+* @param {string} password - password
+* @return {JSON}
+*/
+app.post('/reset/new', function(req, res) {
+  var token = req.body.token;
+  var newPassword = req.body.password;
+  if (!token || !newPassword) {
+    res.status(400).send({success: false, message: 'missing parameters'})
+  }
+  var decoded = jwt.verify(token, config.secret);
+  const userId = decoded.user._id;
+  bcrypt.genSalt(10, function (err, salt) {
+    if (err) {
+      return next(err);
+    }
+    bcrypt.hash(newPassword, salt, null, function (err, hash) {
+      if (err) {
+        res.status(400).send({success: false, message: "error"});
+      }
+      if (moment(decoded.expiresIn).isAfter()) {
+        User.findOneAndUpdate({ _id: userId }, {
+          $set: { password: hash, passwordReset: true },
+        }, {upsert:true}, function(err, updatedUser) {
+          if (!err) {
+            var newToken = jwt.sign(JSON.parse(JSON.stringify(updatedUser)), config.secret);
+            res.status(200).send({success: true, token: 'JWT ' + newToken, user: updatedUser});
+          } else {
+            res.status(400).send({success: false, message: "error"});
+          }
+        });
+      }
+    });
+  });
+});
+
 app.get('/api/marketplace', function (req, res) {
   res.json(file)
 })
@@ -84,8 +173,5 @@ app.get('/api/profile/:userId', passport.authenticate('jwt', { session: false}),
     }
   });
 });
-
-
-
 
 app.listen(5000)
