@@ -27,7 +27,7 @@ class Reset extends Component {
         token: this.props.match.params.token
       }
       axios.post('http://localhost:5000/reset/new', data).then(response =>{
-        alert("Thank you for your purchase")
+        alert("Your password has been reset")
       }).catch(error =>{
         console.log(error)
         alert('Whoops, something went wrong. Please try again!')
