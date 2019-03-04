@@ -1,0 +1,4 @@
+/api/config/config.js
+/web/node_modules
+/api/node_modules
+/tests/node_modules
