@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mocha": "^6.0.2",
     "mock-local-storage": "^1.1.8",
     "nightmare": "^3.0.1"
   }
