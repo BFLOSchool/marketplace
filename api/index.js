@@ -174,4 +174,4 @@ app.get('/api/profile/:userId', passport.authenticate('jwt', { session: false}),
   });
 });
 
-app.listen(proess.env.PORT || 5000)
+app.listen(process.env.PORT || 5000)
