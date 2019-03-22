@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import Nav from './Components/Nav';
 import './App.css';
+import url from './url'
 
 class Home extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Home extends Component {
     this.getItems()
   }
   getItems() {
-    axios.get('http://localhost:5000/api/marketplace/')
+    axios.get(url+'api/marketplace/')
     .then(response => {
       this.setState({
         items: response.data.items

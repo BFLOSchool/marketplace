@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Nav from './Components/Nav';
 import axios from 'axios'
+import url from './url'
 
 class Login extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class Login extends Component {
         email: this.state.email,
         password: this.state.password
       }
-      axios.post('http://localhost:5000/login', data).then(response =>{
+      axios.post(url+'login', data).then(response =>{
         alert("You have logged in successfully")
         localStorage.setItem("token", response.data.token)
         localStorage.setItem("user", response.data.user)

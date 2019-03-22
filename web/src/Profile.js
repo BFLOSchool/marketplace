@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Nav from './Components/Nav';
 import axios from 'axios'
+import url from './url'
 
 class Profile extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Profile extends Component {
   componentDidMount() {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    axios.get('http://localhost:5000/api/profile/'+user._id, { headers: { 'Authorization': token, 'Content-Type': 'application/x-www-form-urlencoded' } }).then(response => {
+    axios.get(url+'api/profile/'+user._id, { headers: { 'Authorization': token, 'Content-Type': 'application/x-www-form-urlencoded' } }).then(response => {
       this.setState({
         firstName: response.data.firstName,
         lastName: response.data.lastName,

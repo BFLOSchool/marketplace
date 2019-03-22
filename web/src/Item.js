@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Nav from './Components/Nav';
 import axios from 'axios'
+import url from './url'
 
 import './App.css';
 
@@ -46,7 +47,7 @@ class Item extends Component {
     })
   }
   getItemDetails() {
-    axios.get('https://dev-curriculum.bfloschool.com/api/marketplace/'+this.props.match.params.itemId)
+    axios.get(url+'api/marketplace/'+this.props.match.params.itemId)
     .then(response => {
       this.setState({
         item: response.data.item
