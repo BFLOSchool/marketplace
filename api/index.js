@@ -14,6 +14,7 @@ require('./config/passport')(passport);
 
 mongoose.connect(config.database);
 const User = require("./models/user");
+const Marketplace = require("./models/marketplace");
 
 var domain = 'mg.bfloschool.com';
 var auth = {
@@ -35,21 +36,82 @@ var file = JSON.parse(fs.readFileSync('data.json'));
 app.use(cors());
 app.use(bodyParser.json())
 
-app.get('/', function (req, res) {
-  res.send('Hello There!')
-})
-
-app.get('/users', function (req, res) {
-  User.find({ }, function(err, users) {
+/**
+ * GET API /api/marketplace
+ * Retrieve the list of marketplace items
+ * @return {JSON}
+ */
+app.get('/api/marketplace', function(req, res) {
+  Marketplace.find({}, function(err, items) {
     if (err) {
       res.status(400).send({message: err.message});
     } else {
-      res.status(200).send({users: users});
+      res.status(200).send({items: items});
     }
-  })
+  });
+});
+
+/**
+ * GET API /api/:itemId
+ * Get an individual item from the marketplace
+ * @param {string} itemId - itemId to be selected
+ * @return {JSON}
+ */
+app.get('/api/marketplace/:itemId', function(req, res) {
+  const itemId = req.params.itemId;
+  if (itemId) {
+    Marketplace.findOne({ _id: itemId }, function(err, item) {
+      if (err) {
+        res.status(400).send({message: err.message});
+      } else {
+        res.status(200).send({item: item});
+      }
+    });
+  } else {
+    return res.status(403).send({success: false, message: 'Please supply all required parameters.'});
+  }
+});
+
+/**
+ * POST API /api/marketplace/new
+ * Create a new marketplace item
+ * @param {string} firstName - user's first name
+ * @param {string} lastName - user's last name
+ * @param {string} email - user's email
+ * @param {string} phoneNumber - user's phone number
+ * @param {string} password - user's password
+ * @return {JSON}
+ */
+app.post('/api/marketplace/new', function (req, res) {
+  var today = new Date();
+  var newMarketplace = new Marketplace({
+    name: req.body.name,
+    description: req.body.description,
+    ingredients: req.body.ingredients,
+    image: req.body.image,
+    price: req.body.price,
+    createdAt: today
+  });
+  newMarketplace.save(function(err, item) {
+    if (!err) {
+      res.status(200).send({item: item})
+    } else {
+      res.status(400).send({message: err.message});
+    }
+  });
 })
 
-app.post('/signup', function (req, res) {
+/**
+ * GET API /api/signup
+ * Signup new user
+ * @param {string} firstName - user's first name
+ * @param {string} lastName - user's last name
+ * @param {string} email - user's email
+ * @param {string} phoneNumber - user's phone number
+ * @param {string} password - user's password
+ * @return {JSON}
+ */
+app.post('/api/signup', function (req, res) {
   var newUser = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -68,7 +130,28 @@ app.post('/signup', function (req, res) {
   });
 })
 
-app.post('/login', function(req, res) {
+/**
+ * GET API /api/users
+ * Retrieve the list of users
+ * @return {JSON}
+ */
+app.get('/api/users', function (req, res) {
+  User.find({ }, function(err, users) {
+    if (err) {
+      res.status(400).send({message: err.message});
+    } else {
+      res.status(200).send({users: users});
+    }
+  })
+})
+/**
+ * GET API /api/login
+ * Login as a new user
+ * @param {string} email - user's email
+ * @param {string} password - user's password
+ * @return {JSON}
+ */
+app.post('/api/login', function(req, res) {
   User.findOne({
     email: req.body.email
   }, function(err, user) {
@@ -93,7 +176,7 @@ app.post('/login', function(req, res) {
  * @param {string} username - username
  * @return {JSON}
  */
-app.post('/reset', function(req, res) {
+app.post('/api/reset', function(req, res) {
   User.findOne({
     email: req.body.email
   }, function(err, user) {
@@ -121,12 +204,12 @@ app.post('/reset', function(req, res) {
 
 /**
 * POST API /api/user/reset/new
-* Create your new password
+* Create your new password and reset your account
 * @param {string} token - token
 * @param {string} password - password
 * @return {JSON}
 */
-app.post('/reset/new', function(req, res) {
+app.post('/api/reset/new', function(req, res) {
   var token = req.body.token;
   var newPassword = req.body.password;
   if (!token || !newPassword) {
@@ -158,10 +241,12 @@ app.post('/reset/new', function(req, res) {
   });
 });
 
-app.get('/api/marketplace', function (req, res) {
-  res.json(file)
-})
-
+/**
+ * GET API /api/profile/:userId
+ * Retrieve details for an individual user
+ * @param {string} userId - user's unique id
+ * @return {JSON}
+ */
 app.get('/api/profile/:userId', passport.authenticate('jwt', { session: false}), function(req, res) {
   User.findOne({
     email: req.params.userId

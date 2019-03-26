@@ -143,6 +143,7 @@ class Checkout extends Component {
                   </div>
                   <div className="col-6">
                     <select value={this.state.cardExpiryMonth} onChange={this.handleCardExpiryMonthChange}>
+                      <option disabled selected>- Select Month -</option>
                       <option value="01">January</option>
                       <option value="02">February </option>
                       <option value="03">March</option>
@@ -159,6 +160,7 @@ class Checkout extends Component {
                   </div>
                   <div className="col-6">
                     <select value={this.state.cardExpiryYear} onChange={this.handleCardExpiryYearChange}>
+                      <option disabled selected>- Select Year -</option>
                       <option value="19"> 2019</option>
                       <option value="20"> 2020</option>
                       <option value="21"> 2021</option>
