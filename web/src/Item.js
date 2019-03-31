@@ -84,7 +84,7 @@ class Item extends Component {
                     <b><span className="orange pointer" onClick={this.addToCart}><i className="fas fa-check"></i>Add to Cart</span></b>
                  </div>
                  <div className="col-4" style={{borderRadius: 5}}>
-                    <div style={{backgroundColor: 'white', padding: 20}}>
+                   <div style={{backgroundColor: 'white', padding: 20}}>
                       <a href="/checkout">
                         {checkoutBtn}
                       </a>
@@ -94,7 +94,7 @@ class Item extends Component {
                           <b className="charcoal">Subtotal ({this.state.cart.length} items)</b>
                         </div>
                         <div className="col-sm-3">
-                          <span>${this.state.total}</span>
+                          <span>${this.state.total.toFixed(2)}</span>
                         </div>
                       </div>
                       <hr style={{marginBottom: 10, marginTop: 10}} />
@@ -118,23 +118,27 @@ class Item extends Component {
                     </div>
                  </div>
                </div>
-                <br /><hr /><br />
-                <h2>Other Foods</h2>
-                <div className="row">
-                  <div className="col-4 ">
-                    <img src="https://cdn.bfloschool.com/projects/marketplace/images/hamburger.jpg" className="cover" /><br />
-                    <span><b>Grilled Cheese</b> $20</span><br />
-                    <small className="gray">This is a cheap grilled cheese</small><br />
-                  </div>
-                  <div className="col-4 ">
-                    <img src="https://cdn.bfloschool.com/projects/marketplace/images/grilled-cheese.jpg" className="cover" /><br />
-                    <span><b>Grilled Cheese</b> $20</span><br />
-                    <small className="gray">This is a cheap grilled cheese</small><br />
-                  </div>
-                </div><br /><br />
-             </div>
+              <br />
+              <hr />
+              <br />
+              <h2>Other Foods</h2>
+              <div className="row">
+                <div className="col-4 ">
+                  <img src="https://cdn.bfloschool.com/projects/marketplace/images/hamburger.jpg" className="cover" /><br />
+                  <span><b>Grilled Cheese</b> $20</span><br />
+                  <small className="gray">This is a cheap grilled cheese</small><br />
+                </div>
+                <div className="col-4 ">
+                  <img src="https://cdn.bfloschool.com/projects/marketplace/images/grilled-cheese.jpg" className="cover" /><br />
+                  <span><b>Grilled Cheese</b> $20</span><br />
+                  <small className="gray">This is a cheap grilled cheese</small><br />
+                </div>
+              </div>
+              <br />
+              <br />
            </div>
-        </div>
+         </div>
+       </div>
       );
     }
   }

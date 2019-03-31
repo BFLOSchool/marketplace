@@ -195,7 +195,7 @@ class Checkout extends Component {
                      <b className="charcoal">Subtotal ({this.state.cart.length} items)</b>
                    </div>
                    <div className="col-sm-3">
-                     <span>${this.state.total}</span>
+                     <span>${this.state.total.toFixed(2)}</span>
                    </div>
                  </div>
                  <hr style={{marginBottom: 10, marginTop: 10}} />
